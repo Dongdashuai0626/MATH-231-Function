@@ -3,9 +3,11 @@ These are functions I think will be helpful when we do our 231 HW.
 
 If you have any questions or advice, please let me know. You can send me email in jiacheng.24@intl.zju.edu.cn
 
-**Lec 04: approximate integral**   You could invoke like *import integral*
+# **Lec 04: approximate integral** 
 
-three functions:midpoint simpson trapezoid
+ ( You could invoke like *import integral* )
+
+three functions in:midpoint simpson trapezoid
 
 Based on the sympy, **Input** are (f,a,b,p,x).**output** are (T,E)
 
