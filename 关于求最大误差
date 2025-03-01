@@ -33,7 +33,7 @@ def findm4(f,b,a):
         return -abs(fd(val))
     result = minimize_scalar(func_to_maximize, bounds=(b,a), method='bounded')
     k= -result.fun
-    return round(k,l)
+    return k
 
 mod=int(input('您想求哪一种方法的误差上限呢少侠/女侠？中点估计输入1，梯形估计输入2，抛物线估计输入3，小孩子才做选择，我是大人我全都要输入4，调戏程序输入其他玩意：'))
 def Em(k,b,a,n):
