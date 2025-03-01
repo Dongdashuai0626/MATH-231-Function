@@ -34,7 +34,7 @@ def trapezoid(f,a,b,p,x):
         t = f.subs(x,b+i*gap)
         T+=t
     T=gap*0.5*(T*2-f.subs(x,b)+f.subs(x,a))
-    return ((round(T,l))
+    return (round(T,l))
 
 #辛普森方法
 def simpson(f,a,b,p,x):
@@ -47,7 +47,7 @@ def simpson(f,a,b,p,x):
         t=f.subs(x,b+i*gap)+4*f.subs(x,b+(i+1)*gap)+f.subs(x,b+(i+2)*gap)
         T+=t
     T=gap/3*T
-    return ((round(T,l))
+    return (round(T,l))
 
 mod=int(input('您想使用哪一种估计积分的方法呢少侠/女侠？中点估计输入1，梯形估计输入2，抛物线估计输入3，小孩子才做选择，我是大人我全都要输入4，调戏程序输入其他玩意：'))
 dic={1:midpoint,2:trapezoid,3:simpson}
