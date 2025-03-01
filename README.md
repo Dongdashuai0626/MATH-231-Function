@@ -9,7 +9,7 @@ If you have any questions or advice, please let me know. You can send me email i
 
 three functions in:midpoint simpson trapezoid
 
-Based on the sympy, **Input** are (f,a,b,p,x).**output** are (T,E)
+Based on the sympy, **Input** are (f,a,b,p,x)**output** are (T,E)
 
 f represents the function you def like 22*sympy.sin(x) 
 
