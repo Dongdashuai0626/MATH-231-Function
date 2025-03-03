@@ -1,6 +1,7 @@
 import sympy as sp
 import sys
 from scipy.optimize import minimize_scalar
+import math
 x=sympy.S('x')
 f=input("请输入一个python下的函数表达式，必须以x为变量，不需要引入库的前缀。例如 'sin(x)' 或 'x**2'：")
 f=sympy.sympify(f)
