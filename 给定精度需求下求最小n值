@@ -9,7 +9,7 @@ jie=input("请输入积分区间，用逗号隔开上下界，先输入上界，
 parts = jie.split(',')
 for i in range(2):
     if parts[i]=='pi':
-        parts[i]=sympy.pi
+        parts[i]=sp.pi
 a=float(parts[0])
 b=float(parts[1])
 if b>=a:
