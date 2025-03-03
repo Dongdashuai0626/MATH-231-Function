@@ -14,7 +14,7 @@ b=float(parts[1])
 if b>=a:
     print('上下界输入反了，请先输入上界哦小笨蛋')
     sys.exit()
-p=int(input('请输入分成的段数：'))
+n=int(input('请输入分成的段数：'))
 l=int(input('请输入希望保留的小数位数：'))
 
 def findm2(f,b,a):
