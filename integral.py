@@ -2,12 +2,22 @@ import sympy
 import sys
 x = sympy.S('x')
 f = input("请输入一个python下的函数表达式，必须以x为变量，不需要引入库的前缀。例如 'sin(x)' 或 'x**2'：")
-f = sympy.sympify(f)
+# 添加数学函数前缀
+f = f.replace('sqrt', 'sympy.sqrt')
+f = f.replace('sin', 'sympy.sin')
+f = f.replace('cos', 'sympy.cos')
+f = f.replace('tan', 'sympy.tan')
+f = f.replace('exp', 'sympy.exp')
+f = f.replace('log', 'sympy.log')
+f = f.replace('e', 'sympy.E')
+f = eval(f)
 jie = input("请输入积分区间，用逗号隔开上下界，先输入下界，圆周率请输入'pi'（不用引号）即可：")
 parts = jie.split(',')
 for i in range(2):
     if parts[i] == 'pi':
         parts[i] = sympy.pi
+    elif parts[i] == 'e':
+        parts[i] = sympy.E
 a = float(parts[0])
 b = float(parts[1])
 if a >= b:
@@ -24,7 +34,7 @@ def midpoint(f, a, b, p, x):
         t = f.subs(x, a + 0.5 * gap + i * gap)
         T += t
     T = T * gap
-    return round(T, l)
+    return round(float(T.evalf()), l)
 
 # 梯形估计
 def trapezoid(f, a, b, p, x):
@@ -34,7 +44,7 @@ def trapezoid(f, a, b, p, x):
         t = f.subs(x, a + i * gap)
         T += t
     T = gap * 0.5 * (T * 2 - f.subs(x, a) + f.subs(x, b))
-    return round(T, l)
+    return round(float(T.evalf()), l)
 
 # 辛普森方法
 def simpson(f, a, b, p, x):
@@ -47,7 +57,7 @@ def simpson(f, a, b, p, x):
         t = f.subs(x, a + i * gap) + 4 * f.subs(x, a + (i + 1) * gap) + f.subs(x, a + (i + 2) * gap)
         T += t
     T = gap / 3 * T
-    return round(T, l)
+    return round(float(T.evalf()), l)
 
 mod = int(input('您想使用哪一种估计积分的方法呢少侠/女侠？中点估计输入1，梯形估计输入2，抛物线估计输入3，小孩子才做选择，我是大人我全都要输入4，调戏程序输入其他玩意：'))
 dic = {1: midpoint, 2: trapezoid, 3: simpson}
